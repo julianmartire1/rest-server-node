@@ -19,7 +19,7 @@ app.get('/usuario', (req, res) => {
         .exec((err, usuarios) => {
             if (err) {
                 return res.status(400).json({
-                    of: false,
+                    ok: false,
                     err
                 })
             }
