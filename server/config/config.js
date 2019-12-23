@@ -9,3 +9,4 @@ if (process.env.NODE_ENV === 'dev') {
 process.env.URLDB = urlD;
 process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
 process.env.SEED = process.env.SEED || 'priv-secret';
+process.env.CLIENT_ID_GOOGLE = process.env.CLIENT_ID_GOOGLE || '596025249928-83vfpub6p2j9iprtatq02mn0mdbicjnr.apps.googleusercontent.com';
