@@ -7,10 +7,6 @@ let app = express();
 let Producto = require('../models/producto');
 
 app.get('/productos', verificarToken, (req, res) => {
-    // trae todos los productos
-    // populate: usuario categoria
-    // paginado
-
     let desde = req.query.desde || 0;
     desde = Number(desde);
 
@@ -39,8 +35,6 @@ app.get('/productos', verificarToken, (req, res) => {
 });
 
 app.get('/productos/:id', (req, res) => {
-    // populate: usuario categoria
-    // paginado
     let id = req.params.id;
 
     Producto.findById(id)
@@ -74,7 +68,6 @@ app.get('/productos/:id', (req, res) => {
 });
 
 app.get('/productos/buscar/:termino', verificarToken, (req, res) => {
-    
     const termino = req.params.termino;
     const regex = new RegExp(termino, 'i');
 
@@ -131,9 +124,6 @@ app.post('/productos', verificarToken, (req, res) => {
 });
 
 app.put('/productos/:id', verificarToken, (req, res) => {
-    // grabar el usuario
-    // grabar una categoria del listado 
-
     let id = req.params.id;
     let body = req.body;
 
@@ -183,7 +173,6 @@ app.put('/productos/:id', verificarToken, (req, res) => {
 });
 
 app.delete('/productos/:id', verificarToken, (req, res) => {
-
     let id = req.params.id;
 
     Producto.findById(id, (err, productoDB) => {
